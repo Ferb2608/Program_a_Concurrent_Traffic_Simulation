@@ -19,6 +19,7 @@ class MessageQueue
 {
 public:
 private:
+    std::deque _queue;
 };
 
 // FP.1 : Define a class „TrafficLight“ which is a child class of TrafficObject.
@@ -27,14 +28,14 @@ private:
 // can be either „red“ or „green“. Also, add the private method „void cycleThroughPhases()“.
 // Furthermore, there shall be the private member _currentPhase which can take „red“ or „green“ as its value.
 
-//Init enum class TrafficLightPhase
+// Init enum class TrafficLightPhase
 enum class TrafficLightPhase
 {
     green,
     red
 };
 
-class TrafficLight
+class TrafficLight : public TrafficObject
 {
 public:
     // constructor / desctructor
