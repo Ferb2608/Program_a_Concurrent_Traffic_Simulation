@@ -18,11 +18,11 @@ template <class T>
 class MessageQueue
 {
 public:
-    void MessageQueue<T>::send(T &&msg);
-    T MessageQueue<T>::receive();
+    void send(T &&msg);
+    T receive();
 
 private:
-    std::deque _queue;
+    std::deque<T> _queue;
     std::condition_variable cv;
     std::mutex m;
 };
@@ -45,7 +45,6 @@ class TrafficLight : public TrafficObject
 public:
     // constructor / desctructor
     TrafficLight();
-    ~TrafficLight();
     // getters / setters
 
     // typical behaviour methods
